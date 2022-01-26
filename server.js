@@ -2,13 +2,14 @@ let express = require('express');
 let app = express();
 let bodyParser = require('body-parser');
 let assignment = require('./routes/assignments');
+let utilisateur = require('./routes/utilisateurs');
 
 let mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 //mongoose.set('debug', true);
 
 // remplacer toute cette chaine par l'URI de connexion à votre propre base dans le cloud s
-const uri = 'mongodb+srv://mb:toto@cluster0.xtr0u.mongodb.net/assignments?retryWrites=true&w=majority';
+const uri = 'mongodb+srv://testWasTaken:testWasTaken@clustermiage.jpocj.mongodb.net/assignmentApp?retryWrites=true&w=majority';
 
 const options = {
   useNewUrlParser: true,
@@ -21,6 +22,7 @@ mongoose.connect(uri, options)
     console.log("Connecté à la base MongoDB assignments dans le cloud !");
     console.log("at URI = " + uri);
     console.log("vérifiez with http://localhost:8010/api/assignments que cela fonctionne")
+    console.log("vérifiez with http://localhost:8010/api/utilisateurs que cela fonctionne")
     },
     err => {
       console.log('Erreur de connexion: ', err);
@@ -47,10 +49,14 @@ app.route(prefix + '/assignments')
   .get(assignment.getAssignments)
   .post(assignment.postAssignment)
   .put(assignment.updateAssignment);
-
 app.route(prefix + '/assignments/:id')
-  .get(assignment.getAssignment)
-  .delete(assignment.deleteAssignment);  
+    .get(assignment.getAssignment)
+    .delete(assignment.deleteAssignment);
+
+app.route(prefix + '/utilisateurs')
+    .get(utilisateur.getUtilisateurs);
+app.route(prefix + '/utilisateurs/:login/:mdp')
+    .get(utilisateur.isLoggedIn);
 
 // On démarre le serveur
 app.listen(port, "0.0.0.0");
