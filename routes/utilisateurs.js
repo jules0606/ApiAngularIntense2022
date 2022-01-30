@@ -1,4 +1,5 @@
 let Utilisateurs = require('../model/utilisateurs');
+const jwt = require("jsonwebtoken");
 
 // Récupérer tous les utilisateurs (GET)
 function getUtilisateurs(req, res) {
@@ -17,16 +18,38 @@ function getUtilisateurs(req, res) {
     );
 }
 
-function isLoggedIn(req, res) {
-    Utilisateurs.findOne({login: req.params.login, mdp: req.params.mdp}, (err, user) => {
+function logIn(req, res) {
+    // Validate user input
+    const { login, mdp } = req.body;
+
+    console.log(login);
+    console.log(mdp);
+
+    if (!(login && mdp)) {
+        res.status(400).send("All input is required");
+    }
+
+    Utilisateurs.findOne({login, mdp}, (err, user) => {
         console.log(err)
         if(err){res.send(err)}
         if(user) {
-            res.send(true);
+            // Creation JWT
+            user.token = jwt.sign(
+                {user_id: user._id, login, mdp},
+                process.env.TOKEN_KEY,
+                {
+                    expiresIn: "1d",
+                }, null
+            );
+
+            delete user.mdp;
+
+            // user
+             res.status(200).json(user);
         } else {
-            res.send(false)
+             res.send(false);
         }
     });
 }
 
-module.exports = { getUtilisateurs, isLoggedIn };
+module.exports = { getUtilisateurs, logIn };

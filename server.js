@@ -3,8 +3,9 @@ let app = express();
 let bodyParser = require('body-parser');
 let assignment = require('./routes/assignments');
 let utilisateur = require('./routes/utilisateurs');
-
 let mongoose = require('mongoose');
+const verifyToken = require("./middleware/auth");
+require('dotenv').config()
 mongoose.Promise = global.Promise;
 //mongoose.set('debug', true);
 
@@ -45,18 +46,29 @@ let port = process.env.PORT || 8010;
 // les routes
 const prefix = '/api';
 
+app.route(prefix + '/utilisateurs')
+    .get(utilisateur.getUtilisateurs)
+    .post(utilisateur.logIn);
+
+
 app.route(prefix + '/assignments')
-  .get(assignment.getAssignments)
-  .post(assignment.postAssignment)
-  .put(assignment.updateAssignment);
+    .get(assignment.getAssignments)
+    .post(assignment.postAssignment)
+    .put(assignment.updateAssignment);
+
 app.route(prefix + '/assignments/:id')
     .get(assignment.getAssignment)
     .delete(assignment.deleteAssignment);
+/*
+ExpRouter.get('/assignments', verifyToken, assignment.getAssignments)
+ExpRouter.post('/assignments', verifyToken, assignment.postAssignment)
+ExpRouter.put('/assignments', verifyToken, assignment.updateAssignment)
 
-app.route(prefix + '/utilisateurs')
-    .get(utilisateur.getUtilisateurs);
-app.route(prefix + '/utilisateurs/:login/:mdp')
-    .get(utilisateur.isLoggedIn);
+
+ExpRouter.get('/assignments/:id', verifyToken, assignment.getAssignment)
+ExpRouter.delete('/assignments/:id', verifyToken, assignment.deleteAssignment)
+ */
+
 
 // On démarre le serveur
 app.listen(port, "0.0.0.0");

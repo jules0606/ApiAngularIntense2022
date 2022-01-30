@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba964384-9bba-415a-8ffa-c97174eb1d68" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/model/utilisateurs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/utilisateurs.js" afterDir="false" />
+    <list default="true" id="ba964384-9bba-415a-8ffa-c97174eb1d68" name="Default" comment="ajout route utilisateurs">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/middleware/auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/utilisateurs.js" beforeDir="false" afterPath="$PROJECT_DIR$/model/utilisateurs.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/utilisateurs.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/utilisateurs.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -142,6 +145,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="settings.javascript.linters.tslint" />
+    <property name="ts.external.directory.path" value="C:\Users\Jules\IntelliJ IDEA 2021.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -160,8 +164,19 @@
       <option name="presentableId" value="Default" />
       <updated>1541964455469</updated>
       <workItem from="1541964456895" duration="1206000" />
-      <workItem from="1643226498622" duration="6727000" />
+      <workItem from="1643226498622" duration="6814000" />
+      <workItem from="1643236744374" duration="51000" />
+      <workItem from="1643321417867" duration="4066000" />
+      <workItem from="1643499011755" duration="2440000" />
     </task>
+    <task id="LOCAL-00001" summary="ajout route utilisateurs">
+      <created>1643235983931</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1643235983931</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -203,6 +218,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ajout route utilisateurs" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajout route utilisateurs" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/package.json.js">

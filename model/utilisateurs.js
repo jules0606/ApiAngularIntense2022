@@ -6,7 +6,8 @@ let Schema = mongoose.Schema;
 let UtilisateurSchema = Schema({
     id: Number,
     login: String,
-    mdp: String
+    mdp: String,
+    token: String,
 });
 
 UtilisateurSchema.plugin(aggregatePaginate);
