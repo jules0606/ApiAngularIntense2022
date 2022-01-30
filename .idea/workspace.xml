@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba964384-9bba-415a-8ffa-c97174eb1d68" name="Default" comment="ajout route utilisateurs">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/middleware/auth.js" afterDir="false" />
+    <list default="true" id="ba964384-9bba-415a-8ffa-c97174eb1d68" name="Default" comment="set Up JWT (mais pas utilisé)">
+      <change afterPath="$PROJECT_DIR$/model/matiere.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/matiere.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/utilisateurs.js" beforeDir="false" afterPath="$PROJECT_DIR$/model/utilisateurs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/assignment.js" beforeDir="false" afterPath="$PROJECT_DIR$/model/assignment.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/utilisateurs.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/utilisateurs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/assignments.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/assignments.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -168,6 +168,7 @@
       <workItem from="1643236744374" duration="51000" />
       <workItem from="1643321417867" duration="4066000" />
       <workItem from="1643499011755" duration="2440000" />
+      <workItem from="1643525667081" duration="5891000" />
     </task>
     <task id="LOCAL-00001" summary="ajout route utilisateurs">
       <created>1643235983931</created>

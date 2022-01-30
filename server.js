@@ -3,6 +3,7 @@ let app = express();
 let bodyParser = require('body-parser');
 let assignment = require('./routes/assignments');
 let utilisateur = require('./routes/utilisateurs');
+let matiere = require('./routes/matiere');
 let mongoose = require('mongoose');
 const verifyToken = require("./middleware/auth");
 require('dotenv').config()
@@ -59,6 +60,9 @@ app.route(prefix + '/assignments')
 app.route(prefix + '/assignments/:id')
     .get(assignment.getAssignment)
     .delete(assignment.deleteAssignment);
+
+app.route(prefix + '/matieres')
+    .get(matiere.getMatieres)
 /*
 ExpRouter.get('/assignments', verifyToken, assignment.getAssignments)
 ExpRouter.post('/assignments', verifyToken, assignment.postAssignment)
