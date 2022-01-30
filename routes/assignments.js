@@ -63,7 +63,7 @@ function postAssignment(req, res){
 
     assignment.save( (err) => {
         if(err){
-            res.send('cant post assignment ', err);
+            res.status(509).send('cant post assignment ', err);
         }
         res.json(assignment);
     })

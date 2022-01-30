@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba964384-9bba-415a-8ffa-c97174eb1d68" name="Default" comment="">
+    <list default="true" id="ba964384-9bba-415a-8ffa-c97174eb1d68" name="Default" comment="Ajout d'un détail, d'un rendu avec la matière">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/assignment.js" beforeDir="false" afterPath="$PROJECT_DIR$/model/assignment.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/assignments.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/assignments.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/utilisateurs.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/utilisateurs.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +163,7 @@
       <workItem from="1643321417867" duration="4066000" />
       <workItem from="1643499011755" duration="2440000" />
       <workItem from="1643525667081" duration="13359000" />
-      <workItem from="1643551471170" duration="6682000" />
+      <workItem from="1643551471170" duration="9870000" />
     </task>
     <task id="LOCAL-00001" summary="ajout route utilisateurs">
       <created>1643235983931</created>
@@ -181,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643535327724</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Ajout d'un détail, d'un rendu avec la matière">
+      <created>1643563819104</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1643563819104</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -227,7 +232,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ajout route utilisateurs" />
     <MESSAGE value="Ajout de matiere + get Assignment by Id" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout de matiere + get Assignment by Id" />
+    <MESSAGE value="Ajout d'un détail, d'un rendu avec la matière" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout d'un détail, d'un rendu avec la matière" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/package.json.js">
