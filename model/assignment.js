@@ -5,12 +5,11 @@ let Schema = mongoose.Schema;
 const matiere = require('./matiere')
 
 let AssignmentSchema = Schema({
-    id: Number,
     dateDeRendu: Date,
     nom: String,
     rendu: Boolean,
     auteur: String,
-    Matiere: matiere.schema,
+    matiere: matiere.schema,
     note: Number,
     remarques: String
 });

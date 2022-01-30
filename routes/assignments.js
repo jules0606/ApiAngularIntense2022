@@ -16,9 +16,14 @@ function getAssignments(req, res){
 
 function getAssignments(req, res) {
     var aggregateQuery = Assignment.aggregate();
-    if(req.query.onlyRendu === "true") {
-        console.log('onlyRendu');
-        aggregateQuery = Assignment.aggregate([{ $match: { rendu: true} }]);
+    if(req.query.onlyRendu === "true" && req.query.nomDevoir && req.query.nomDevoir !== '') {
+        aggregateQuery = Assignment.aggregate([{ $match: { rendu: true}}, { $match: {"nom" : {$regex : ".*"+req.query.nomDevoir +".*"}}}]);
+    }
+    else if(req.query.onlyRendu === "true") {
+        aggregateQuery = Assignment.aggregate([{ $match: { rendu: true}}]);
+    }
+    else if(req.query.nomDevoir && req.query.nomDevoir !== '') {
+        aggregateQuery = Assignment.aggregate([{ $match: {"nom" : {$regex : ".*"+req.query.nomDevoir +".*"}}}]);
     }
     Assignment.aggregatePaginate(aggregateQuery,
       {
@@ -36,7 +41,6 @@ function getAssignments(req, res) {
    
 // Récupérer un assignment par son id (GET)
 function getAssignment(req, res){
-    console.log(req.params.id)
     Assignment.findById(req.params.id, (err, assignment) =>{
         if(err){res.send(err)}
         res.json(assignment);
@@ -46,10 +50,13 @@ function getAssignment(req, res){
 // Ajout d'un assignment (POST)
 function postAssignment(req, res){
     let assignment = new Assignment();
-    assignment.id = req.body.id;
     assignment.nom = req.body.nom;
     assignment.dateDeRendu = req.body.dateDeRendu;
     assignment.rendu = req.body.rendu;
+    assignment.note = -1;
+    assignment.matiere = req.body.matiere;
+    assignment.nomAuteur = req.body.nomAuteur;
+    assignment.remarques = req.body.remarques;
 
     console.log("POST assignment reçu :");
     console.log(assignment)
@@ -58,7 +65,7 @@ function postAssignment(req, res){
         if(err){
             res.send('cant post assignment ', err);
         }
-        res.json({ message: `${assignment.nom} saved!`})
+        res.json(assignment);
     })
 }
 

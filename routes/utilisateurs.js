@@ -42,9 +42,8 @@ function logIn(req, res) {
                 }, null
             );
 
+            user.admin = login === 'admin';
             delete user.mdp;
-
-            // user
              res.status(200).json(user);
         } else {
              res.send(false);
