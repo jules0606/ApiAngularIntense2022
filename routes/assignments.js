@@ -13,8 +13,13 @@ function getAssignments(req, res){
 }
 */
 // Récupérer tous les assignments (GET)
+
 function getAssignments(req, res) {
     var aggregateQuery = Assignment.aggregate();
+    if(req.query.onlyRendu === "true") {
+        console.log('onlyRendu');
+        aggregateQuery = Assignment.aggregate([{ $match: { rendu: true} }]);
+    }
     Assignment.aggregatePaginate(aggregateQuery,
       {
         page: parseInt(req.query.page) || 1,
